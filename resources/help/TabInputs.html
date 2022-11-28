@@ -1,0 +1,87 @@
+<HTML>
+<HEAD>
+  <META NAME="GENERATOR" CONTENT="Adobe PageMill 2.0 Mac">
+  <TITLE>Sukhumwit Crawler Input Panel</TITLE>
+</HEAD>
+<BODY>
+
+<H1>Sukhumwit Crawler Input Panel</H1>
+<A HREF="toc.html"><IMG SRC="back.gif" WIDTH="42" HEIGHT="22" ALIGN="RIGHT" NATURALSIZEFLAG="3" BORDER="0">Contents</A>
+<P>&nbsp;</P>
+
+<P>This panel accepts the basic user inputs which tell the spider
+  <I>where</I> to begin its search, and <I>what</I> to look for.</P>
+
+<P>The following fields and buttons should be verified before you
+   click the "Start" button, to begin the crawl.</P>
+
+<UL>
+  <LI><A NAME="Host"><B><I>Host</I></B>:</A>
+      Select the web host configuration that you wish to search. This will
+      cause several other fields to be filled in and will select the custom
+      parser designed to look for contacts on that host type.</LI>
+
+  <LI><A NAME="RootURL"><B><I>Root URL(s)</I></B>:</A>
+      Specify the first page where the crawler should begin its search.<BR>
+      <B>Note:</B> If this field contains %d it will be treated as a
+      pattern, allowing several similar URLs to be scheduled for processing
+      at the beginning of the search. This feature combined with the exclusion
+      feature described below can significantly improve the crawler's
+      performance. For more information see <A HREF="#RootPattern">Specifying
+      Root URL Patterns</A> below.</LI>
+
+  <LI><A NAME="URLRange"><B><I>Range</I></B>:</A>
+      Use these fields to specify an inclusive range of non-negative integers
+      to be substituted into the pattern specified in the
+      <A HREF="#RootURL">Root URL(s)</A> field.  For more information see
+      <A HREF="#RootPattern">Specifying Root URL Patterns</A> below.</LI>
+
+  <LI><A NAME="MaxDepth"><B><I>MaxDepth</I></B>:</A>
+      The maximum depth to search pages. Enter -1 to indicate no
+      maximum depth (the spider can run forever!). Defaults to 4.</LI>
+
+  <LI><A NAME="URLExclude"><B><I>Exclude URLs containing...</I></B>:</A>
+      Use this field to specify an arbitrary number of strings, which if
+      encountered by the crawler will be skipped. Enter one string per line
+      and do not leave any blank lines. For example if you typed in the
+      string <I>copy</I> on a line, any URLs, such as
+      <I>http://www.yahoo.com/copyright.html</I>, which contain that string
+      will not be searched for links or contacts. If you click the start button,
+      these values will be saved to disk. They are restored the next time
+      you select this host.</LI>
+</UL>
+
+<A NAME="RootPattern"><H2>Specifying Root URL Patterns</H2></A>
+ <P>The <A HREF="#RootURL">Root URL(s)</A> field is treated as a pattern
+    whenever <B><I>%d</I></B> is present in the field. This causes the
+    spider to imediately schedule multiple URLs for scanning upon starting.</P>
+
+ <P>For example if you specify the Root URL as
+    <I>http://www.yahoo.com/fred<B>%d</B>.html</I> and enter
+    the range as <B><I>3 - 5</I></B> the following URLs would be
+    scheduled when the spider is launched:
+    <UL>
+      <LI><I>http://www.yahoo.com/fred<B>3</B>.html</I></LI>
+      <LI><I>http://www.yahoo.com/fred<B>4</B>.html</I></LI>
+      <LI><I>http://www.yahoo.com/fred<B>5</B>.html</I></LI>
+    </UL>
+    If you combine this with excluding the string <I>fred</I>, in the
+    <A HREF="#URLExclude"><I>Exclude URLs containing...</I></A> field
+    you ensure that <I>fred6.html, fred7.html, etc.</I> are not
+    searched on this run.<P>
+
+ <H2>A Variation</H2>
+ <P>If you want to specify leading zeros you can use <I>%0xd</I>,
+    where the <I>x</I> indicates the width of the numbers. For
+    example, specifying the range <B><I>8 - 10</I></B> with the pattern
+    <I>http://www.yahoo.com/fred<B>%04d</B>.html</I> would yield the
+    following URLs:
+    <UL>
+      <LI><I>http://www.yahoo.com/fred<B>0008</B>.html</I></LI>
+      <LI><I>http://www.yahoo.com/fred<B>0009</B>.html</I></LI>
+      <LI><I>http://www.yahoo.com/fred<B>0010</B>.html</I></LI>
+    </UL></P>
+
+<P><A HREF="toc.html"><IMG SRC="back.gif" WIDTH="42" HEIGHT="22" ALIGN="BOTTOM" NATURALSIZEFLAG="3" BORDER="0">Contents</A>
+</BODY>
+</HTML>

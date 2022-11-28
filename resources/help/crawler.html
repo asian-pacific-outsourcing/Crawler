@@ -1,0 +1,40 @@
+<HTML>
+<HEAD>
+   <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+   <META NAME="GENERATOR" CONTENT="Mozilla/4.02 [en] (X11; U; SunOS 5.6 sun4u) [Netscape]">
+   <TITLE>Sukhumwit Crawler</TITLE>
+</HEAD>
+<BODY>
+<P><A HREF="toc.html"><IMG SRC="back.gif" BORDER=0 NATURALSIZEFLAG="3" HEIGHT=22 WIDTH=42 ALIGN=BOTTOM>Contents</A></P>
+
+<H1>Sukhumwit Crawler Overview</H1>
+<P>Sukhumwit Crawler is a Java Swing-based application that mines potential contacts from Web Sites.  Once a contact page has been found it is parsed to extract the contact info into discrete fields which may be stored in an SQL database. This database will be shared by other apps in the suite which are designed to mercilessly fleece the contacts.</P>
+
+<P><I><B>The idea is to easily generate massive quantities of leads which are stored in a database for later use.</B></I></P>
+
+<H1>Operation</H1>
+ <P>This application begins at Web page specified by the user. It scans this page
+    for links to other pages, which are each scanned in turn for more web pages.
+    This scanning will continue until either no more links are found, or the
+    <A HREF="TabOptions.html#MaxDepth">maximum depth</A> is reached.</P>
+ <P>Concurrent with the scan for links, a parser looks for contact information.</P>
+
+<H1>Sample Contact Information</H1>
+The following links will be found by the crawler. They are downloaded from alibaba.com and
+represent typical contact information found there. The crawler knows how to pull the
+information from these pages.<BR>
+<BR><A HREF="contactinfo1.html">Sample 1</A>
+<BR><A HREF="contactinfo2.html">Sample 2</A>
+
+<H1>Other Sample Contacts</H1>
+The following links will also be found by the crawler. They too are downloaded from alibaba.com, but I'm still working on getting the to pull the
+information from these pages.<BR>
+<BR><A HREF="contacts/dzzy[1].html">dzzy[1]</A>
+<BR><A HREF="contacts/in104101863[1].html">in104101863[1]</A>
+<BR><A HREF="contacts/kcitrade_en_ecplaza.html.html">kcitrade_en_ecplaza.html</A>
+
+&nbsp;
+
+<P><A HREF="toc.html"><IMG SRC="back.gif" BORDER=0 NATURALSIZEFLAG="3" HEIGHT=22 WIDTH=42 ALIGN=BOTTOM>Contents</A></P>
+</BODY>
+</HTML>

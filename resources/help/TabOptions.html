@@ -1,0 +1,86 @@
+<HTML>
+<HEAD>
+  <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+  <META NAME="GENERATOR" CONTENT="Mozilla/4.02 [en] (X11; U; SunOS 5.6 sun4u) [Netscape]">
+  <TITLE>Sukhumwit Crawler Spider Settings</TITLE>
+</HEAD>
+<BODY>
+<P><A HREF="toc.html"><IMG SRC="back.gif" BORDER=0 NATURALSIZEFLAG="3" HEIGHT=22 WIDTH=42 ALIGN=BOTTOM>Contents</A></P>
+
+<H1>Sukhumwit Crawler Spider Settings</H1>
+ <P>These options control <I>how</I> the spider operates. These are
+    generally <I>advanced settings</I> that should rarely need to be modified.</P>
+ <P><B>Note</B>: Changes to any of the fields on this screen
+    <i>do not take effect until the <B>Apply</B> option
+    pressed.</I>
+ <P>Also, there is currently no way to save these options between runs.</P>
+ <UL>
+  <LI><A NAME="WorkloadMgr"><B><I>Workload Manager</I></B>:</A>
+      The spider can operate storing the lists of visited pages and
+      pages remaining to visit either in memory or in a data base.
+      Use this field to specify either the <I>Memory Based</I> or
+      <I>Database</I> workload manager for the spider.</LI>
+      
+  <LI><A NAME="WMWCSettings"><B><I>Web Connections</I></B>:</A>
+      <UL>
+       <LI><A NAME="Timeout"><B><I>Timeout</I></B>:</A>
+           How many milliseconds to wait when downloading pages. Defaults
+           to 90000 (90 seconds).</LI>
+       <LI><A NAME="UserAgent"><B><I>User Agent</I></B>:</A>
+           What user agent should be reported to the web site.
+           This generally allows the web site to determine what browser is
+           in use. Leave blank (default) for no reporting of a user agent.</LI>
+       <LI><A NAME="addMax"><B><I>Max URLs</I></B>:</A>
+           This field limits the number of URLs that will be added to the
+           workload during processing. Once the crawler reaches this maximum
+           it refuses to add any more URLs that are found to its workload.
+           This is useful for an intial test run on a site. Leave blank or
+           specify -1 for no limit.</LI>
+      </UL>
+  <LI><A NAME="WMBGSettings"><B><I>Background Tasks</I></B>:</A>
+      Pages that are visited by the spider are processed in the background.
+      See <A HREF="bgTasks.html">Background Operation</A> for more details.
+      <UL>
+       <LI><A NAME="CorePoolSize"><B><I>Core Pool Size</I></B>:</A>
+           The core thread pool size. This indicates the number of active
+           parses that are allocated to run in the background.</LI>
+       <LI><A NAME="MaxPoolSize"><B><I>Max Pool Size</I></B>:</A>
+           The maximum thread pool size.</LI>
+       <LI><A NAME="KeepAliveTime"><B><I>Keep Alive Time</I></B>:</A>
+           How long, in seconds, to keep inactive threads alive.
+           Defaults to 60 (seconds).</LI>
+      </UL>
+  <LI><A NAME="WMDBSettings"><B><I>Database Settings</I></B>:</A>
+      These fields are only enabled when the <I>database</I> workload
+      manager is selected. These options tell the spider where the
+      database is located and how to connect to it:
+      <UL>
+       <LI><A NAME="WMDBURL"><B><I>Database URL</I></B>:</A>
+           Advanced setting that specifies the location and name of
+           of workload database as it is known to the operating system.</LI>
+       <LI><A NAME="WMDBDriver"><B><I>Database Driver</I></B>:</A>
+           Advanced setting that specifies the code that will mediate
+           between the database and the application. Defaults to the
+           Sun Microsystems JDBC driver (sun.jdbc.odbc.JdbcOdbcDriver).</LI>
+       <LI><A NAME="WMDBUID"><B><I>Database User ID</I></B>:</A>
+           The user id (name) to access the database.</LI>
+       <LI><A NAME="WMDBPW"><B><I>Database Password</I></B>:</A>
+           The password to access the database.</LI>
+      </UL>
+   </LI>
+  <LI><A NAME="WMStartup"><B><I>Resume or Restart</I></B>:</A>
+      Only available with the <I>database</I> workload manager,
+      <UL>
+       <LI><A NAME="WMRestart"><B><I>Restart</I></B>:</A>
+           specifies that when the spider starts up it should
+           clear the workload and start over with the crawl.</LI>
+       <LI><A NAME="WMResume"><B><I>Resume</I></B>:</A>
+           specifies that the spider should resume processing its
+           workload where it left of on the previous run</LI>
+      </UL>
+   </LI>
+ </UL>
+
+<P><A HREF="toc.html"><IMG SRC="back.gif" BORDER=0 NATURALSIZEFLAG="3" HEIGHT=22 WIDTH=42 ALIGN=BOTTOM>Contents</A>
+</BODY>
+</HTML>

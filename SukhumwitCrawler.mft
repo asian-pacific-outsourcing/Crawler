@@ -1,0 +1,2 @@
+Main-Class: com.shanebow.tools.Crawler._SukhumwitCrawler
+Class-Path: _sbcommon.jar _sbspider.jar _sbdao.jar ucanaccess-5.0.0.jar commons-lang3-3.8.1.jar commons-logging-1.2.jar hsqldb-2.5.0.jar jackcess-3.0.1.jar . 
